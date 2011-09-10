@@ -1,7 +1,4 @@
-<?php
-
-if (!defined('TL_ROOT'))
-    die('You can not access this file directly!');
+<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
 
 /**
  * Contao Open Source CMS
@@ -40,22 +37,23 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['selectarticle'] = '{title_legend},n
  */
 $GLOBALS['TL_DCA']['tl_module']['fields']['selectarticle_column'] = array
     (
-    'label' => &$GLOBALS['TL_LANG']['tl_module']['selectarticle_column'],
-    'exclude' => true,
-    'inputType' => 'select',
-    'options_callback' => array('SelectArticle_tl_modules', 'optionCallColumn'),
-    'eval' => array('mandatory' => true),
+    'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['selectarticle_column'],
+    'exclude' 			=> true,
+    'inputType' 		=> 'select',
+    'options_callback' 	=> array('SelectArticle', 'options_callback'),
+    'eval' 				=> array('mandatory' => true),
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['selectarticle_fallback'] = array
     (
-    'label' => &$GLOBALS['TL_LANG']['tl_module']['selectarticle_fallback'],
-    'exclude' => true,
-    'inputType' => 'textarea',    
-    'eval' => array('allowHtml' => true, 'preserveTags' => true, 'decodeEntities' => FALSE),    
+    'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['selectarticle_fallback'],
+    'exclude' 			=> true,
+    'inputType' 		=> 'textarea',    
+	'eval'				=> array('allowHtml'=>true, 'class'=>'monospace', 'rte'=>'codeMirror|html', 'helpwizard'=>true),
+	'explanation'		=> 'insertTags'	
 );
 
-class SelectArticle_tl_modules extends Backend
+class SelectArticle extends Backend
 {
 
     public function __construct()
@@ -65,7 +63,7 @@ class SelectArticle_tl_modules extends Backend
         $this->import("Database");
     }
 
-    public function optionCallColumn()
+    public function options_callback()
     {
         $arrReturn = array();
 

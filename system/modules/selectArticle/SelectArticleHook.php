@@ -34,11 +34,9 @@ class SelectArticleHook extends Frontend
     {
         $arrTag = explode("::", $strTag);
 
-        if ($arrTag[0] == "maw" && $arrTag[1] == "current_alias")
+        if ($arrTag[0] == "sa" && $arrTag[1] == "current_alias")
         {
-            // Load languages and extract the keys
             $arrLanguage = array_keys($this->getLanguages());
-            // Load page
             $arrPage = $GLOBALS['objPage']->fetchAllAssoc();  
             
             // Search for a language tag and remove it

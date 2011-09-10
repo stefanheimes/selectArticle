@@ -30,9 +30,7 @@
 /**
  * Front end modules
  */
-array_insert($GLOBALS['FE_MOD']['miscellaneous'], 9, array(
-    'selectarticle' => 'SelectArticleModule',
-));
+$GLOBALS['FE_MOD']['miscellaneous']['selectarticle'] = 'SelectArticleModule';
 
 /**
  * Hooks

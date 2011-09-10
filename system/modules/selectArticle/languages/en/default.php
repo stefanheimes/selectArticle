@@ -30,6 +30,6 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MOD']['selectarticle'] = array('Artikelwechsler','Erzeugt einen automatischen Wechsel zwischen Artikel und Bild.');
+$GLOBALS['TL_LANG']['MOD']['selectarticle'] = array('Artikelwechsler','Erzeugt einen automatischen Wechsel zwischen Artikel und HTML-Code.');
 
 ?>
