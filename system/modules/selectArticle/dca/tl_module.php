@@ -65,13 +65,14 @@ class SelectArticle extends Backend
 
     public function options_callback()
     {
-        $arrReturn = array();
+        $arrCustomSections = trimsplit(',', $GLOBALS['TL_CONFIG']['customSections']);
+        $arrSections = array('header', 'left', 'right', 'main', 'footer');
 
-        $arrColumn = $this->Database->prepare("SELECT inColumn FROM tl_article GROUP BY inColumn")->execute()->fetchAllAssoc();
+        $arrColumn = array_merge($arrSections, $arrCustomSections);
 
         foreach ($arrColumn as $value)
         {
-            $arrReturn[$value['inColumn']] = ucfirst($value['inColumn']);
+            $arrReturn[$value] = ucfirst($value);
         }
 
         return $arrReturn;
