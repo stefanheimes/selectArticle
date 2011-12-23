@@ -37,19 +37,23 @@ class SelectArticleHook extends Frontend
         if ($arrTag[0] == "sa" && $arrTag[1] == "current_alias")
         {
             $arrLanguage = array_keys($this->getLanguages());
-            $arrPage = $GLOBALS['objPage']->fetchAllAssoc();  
-            
+            $arrPage = $GLOBALS['objPage']->fetchAllAssoc();
+
             // Search for a language tag and remove it
-            $arrPageAlias = explode("/", $arrPage[0]['alias']);            
+            $arrPageAlias = explode("/", $arrPage[0]['alias']);
             foreach ($arrPageAlias as $key => $value)
-            {                
-                if($value == "")
+            {
+                if ($value == "")
+                {
                     continue;
-                
-                if(in_array($value, $arrLanguage))
-                    unset ($arrPageAlias[$key]);
-            }      
-            
+                }
+
+                if (in_array($value, $arrLanguage))
+                {
+                    unset($arrPageAlias[$key]);
+                }
+            }
+
             // Return clear aliase
             return strtolower(implode("/", $arrPageAlias));
         }

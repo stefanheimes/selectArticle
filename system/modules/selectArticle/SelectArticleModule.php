@@ -26,7 +26,6 @@
  * @license    GNU/LGPL
  * @filesource
  */
-
 class SelectArticleModule extends Module
 {
 
@@ -41,7 +40,7 @@ class SelectArticleModule extends Module
      * @return string
      */
     public function generate()
-    {        
+    {
         if (TL_MODE == 'BE')
         {
             $objTemplate = new BackendTemplate('be_wildcard');
@@ -54,8 +53,6 @@ class SelectArticleModule extends Module
 
             return $objTemplate->parse();
         }
-        
-        
 
         return parent::generate();
     }
@@ -67,17 +64,17 @@ class SelectArticleModule extends Module
     {
         $arrPage = $GLOBALS['objPage']->fetchAllAssoc();
         $intID = $arrPage[0]['id'];
-        
+
         $arrColumn = $this->Database->
                 prepare("SELECT COUNT(*) as count FROM tl_article WHERE pid = ? AND inColumn = ? AND published = 1")
                 ->execute($intID, $this->selectarticle_column);
-                       
-        if($arrColumn->count > 0)
+
+        if ($arrColumn->count > 0)
         {
             return;
         }
-        
-        $this->Template->content = $this->selectarticle_fallback;        
+
+        $this->Template->content = $this->selectarticle_fallback;
     }
 
 }
