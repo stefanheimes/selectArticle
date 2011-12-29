@@ -27,7 +27,7 @@
  * @filesource
  */
 
-$GLOBALS['TL_LANG']['tl_module']['selectarticle_column'] = array("Spaltenauswahl", "Hier können Sie auswählen welche Spalte überprüft werden soll.");
-$GLOBALS['TL_LANG']['tl_module']['selectarticle_fallback'] = array("Alternativcode", "Wenn kein Artikel vorhanden ist, können Sie mit HTML und Contao Insert-Tags eine Alternative definieren.");
+$GLOBALS['TL_LANG']['tl_module']['sa_column'] = array("Spaltenauswahl", "Hier können Sie auswählen welche Spalte überprüft werden soll.");
+$GLOBALS['TL_LANG']['tl_module']['sa_fallback'] = array("Alternativcode", "Wenn kein Artikel vorhanden ist, können Sie mit HTML und Contao Insert-Tags eine Alternative definieren.");
         
 ?>

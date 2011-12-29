@@ -15,6 +15,6 @@
 -- 
 
 CREATE TABLE `tl_module` (
-  `selectarticle_column` varchar(255) NOT NULL default '',
-  `selectarticle_fallback` text NULL 
+  `sa_column` varchar(255) NOT NULL default '',
+  `sa_fallback` text NULL 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

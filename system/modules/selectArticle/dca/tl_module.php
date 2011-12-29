@@ -30,23 +30,23 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['selectarticle'] = '{title_legend},name,type;{config_legend},selectarticle_column,selectarticle_fallback';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['selectarticle'] = '{title_legend},name,type;{config_legend},sa_column,sa_fallback';
 
 /**
  * Add fields to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['fields']['selectarticle_column'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['sa_column'] = array
     (
-    'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['selectarticle_column'],
+    'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['sa_column'],
     'exclude' 			=> true,
     'inputType' 		=> 'select',
     'options_callback' 	=> array('SelectArticle', 'options_callback'),
     'eval' 				=> array('mandatory' => true),
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['selectarticle_fallback'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['sa_fallback'] = array
     (
-    'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['selectarticle_fallback'],
+    'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['sa_fallback'],
     'exclude' 			=> true,
     'inputType' 		=> 'textarea',    
 	'eval'				=> array('allowHtml'=>true, 'class'=>'monospace', 'rte'=>'codeMirror|html', 'helpwizard'=>true),

@@ -30,5 +30,5 @@
 /**
  * Front end modules
  */
+$GLOBALS['TL_LANG']['MOD']['selectArticle'] = 'Artikelwechsler';
 $GLOBALS['TL_LANG']['FMD']['selectarticle'] = array('Artikelwechsler', 'Erzeugt einen automatischen Wechsel zwischen Artikel und Bild.');
-

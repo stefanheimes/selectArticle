@@ -67,14 +67,14 @@ class SelectArticleModule extends Module
 
         $arrColumn = $this->Database->
                 prepare("SELECT COUNT(*) as count FROM tl_article WHERE pid = ? AND inColumn = ? AND published = 1")
-                ->execute($intID, $this->selectarticle_column);
+                ->execute($intID, $this->sa_column);
 
         if ($arrColumn->count > 0)
         {
             return;
         }
 
-        $this->Template->content = $this->selectarticle_fallback;
+        $this->Template->content = $this->sa_fallback;
     }
 
 }
