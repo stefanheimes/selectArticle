@@ -21,7 +21,7 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  MEN AT WORK 2011
+ * @copyright  MEN AT WORK 2012
  * @package    selectArticle
  * @license    GNU/LGPL
  * @filesource
@@ -49,9 +49,15 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['sa_fallback'] = array
     'label' 			=> &$GLOBALS['TL_LANG']['tl_module']['sa_fallback'],
     'exclude' 			=> true,
     'inputType' 		=> 'textarea',    
-	'eval'				=> array('allowHtml'=>true, 'class'=>'monospace', 'rte'=>'codeMirror|html', 'helpwizard'=>true),
+	'eval'				=> array('allowHtml'=>true, 'class'=>'monospace', 'helpwizard'=>true),
 	'explanation'		=> 'insertTags'	
 );
+
+// Set rte if we have a contao version 2.10
+if(version_compare(VERSION, "2.10", ">="))
+{
+    $GLOBALS['TL_DCA']['tl_module']['fields']['sa_fallback']['eval']['rte'] = 'codeMirror|html';
+}
 
 class SelectArticle extends Backend
 {
